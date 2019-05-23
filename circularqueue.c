@@ -11,39 +11,27 @@ int enqueue(int a[],int size,int value)
     {
         front=rear=0;
         a[front]=value;
-        return 0;
     }
     else if(rear==size-1)
     {
         rear=0;
         a[rear]=value;
-        return 0;
     }
     else
-    {
         a[++rear]=value;
-        return 0;
-    }
+    return 0;
 }
 int dequeue(int a[],int size)
 {
     if(front==-1)
         return -1;
     else if(front==rear)
-    {
         front=rear=-1;
-        return 0;
-    }
     else if(front==size-1)
-    {
         front=0;
-        return 0;
-    }
     else
-    {
         front++;
-        return 0;
-    }
+    return 0;
 }
 void display(int a[],int size)
 {
