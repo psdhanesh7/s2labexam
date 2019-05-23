@@ -5,17 +5,21 @@
 long long int a[1000000],noprimes;
 void primegeneration(long long int n)
 {
-    long long int i,j;
+    long long int i,j,prime;
     if(n>=2)
     {
         a[0]=2;
         noprimes=1;
         for(i=3;i<=n;i++)
         {
-            for(j=0;j<noprimes;j++)
+		prime=1;
+            for(j=0;a[j]<sqrt(i);j++)
                 if(i%a[j]==0)
-                    break;
-            if(j==noprimes)
+                {
+			prime=0;
+			break;
+		}
+            if(prime)
                 a[noprimes++]=i;
         }
     }
@@ -23,8 +27,8 @@ void primegeneration(long long int n)
 }
 int prime(long long int n)
 {
-    long long int i;
-    for(i=0;i<noprimes && a[i]<= sqrt(n);i++)
+    long long int i,sq=sqrt(n);
+    for(i=0;a[i]<=sq;i++)
         if(n%a[i]==0)
             return 0;
     return 1;
