@@ -12,8 +12,9 @@ void primegeneration(long long int n)
         noprimes=1;
         for(i=3;i<=n;i++)
         {
+		int sq=sqrt(i);
 		prime=1;
-            for(j=0;a[j]<sqrt(i);j++)
+            for(j=0;a[j]<sq;j++)
                 if(i%a[j]==0)
                 {
 			prime=0;
